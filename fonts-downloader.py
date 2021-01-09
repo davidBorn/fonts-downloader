@@ -8,13 +8,14 @@ siteName = input("Please enter the filename of your stored website files:")
 fileType = input("Please enter the file (css, js, etc.):")
 fileName = input("Please enter what file to search for fonts:")
 fontPathStart = input("Please enter the start for each font link:")
-chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-path = "/Users/David/Documents/"+siteFolder+"/"+siteName+"_files/"+fileType+"/"+fileName
+chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
+path = "/Users/davidborn/Desktop/"+siteFolder+"/"+siteName+"_files/"+fileType+"/"+fileName
 
 linkArray=[]
 
-with open(path, 'r', encoding="utf-8") as cssFile:
+with open(path, 'r') as cssFile:
     for line in cssFile:
+        print(line)
         eotPattern = "[\/()-_%&0-9a-zA-Z \.]+\.eot"
         svgPattern = "[\/()-_%&0-9a-zA-Z \.]+\.svg"
         woffPattern = "[\/()-_%&0-9a-zA-Z \.]+\.woff"
